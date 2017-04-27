@@ -8,19 +8,24 @@ class Stack {
   }
 
   size() {
-    return `Max size ${this.size}`;
+    return this.maxSize;
   }
 
   stackPush(x) {
-    if (this.arr.length > this.maxSize) {
-        return "array penuh";
+    if (this.isFull()) {
+      return "array penuh";
     } else {
       (this.arr).push(x);
     }
   }
 
   stackPop() {
-    (this.arr).pop();
+    if (this.isEmpty()) {
+      return "array kosong";
+    } else {
+      (this.arr).pop();
+    }
+
   }
 
   first() {
@@ -32,7 +37,7 @@ class Stack {
   }
 
   isEmpty() {
-    if (!this.isFull()) {
+    if (this.arr == []) {
       return true;
     } else {
       return false;
@@ -40,10 +45,10 @@ class Stack {
   }
 
   isFull() {
-    if (this.arr == []) {
-      return false;
-    } else {
+    if (this.arr.length == this.size()) {
       return true;
+    } else {
+      return false;
     }
   }
 
@@ -60,12 +65,14 @@ myStack.stackPush("cc");
 console.log(myStack);
 
 console.log(myStack.stackPeep());
-console.log(myStack);
-console.log(myStack.isEmpty());
-console.log(myStack.isFull());
-console.log(myStack.last());
+console.log("is it empty ? ", myStack.isEmpty());
+console.log("is it full ?", myStack.isFull());
+console.log("isi ", myStack.stackPush("fajar"));
+console.log("isi", myStack.stackPush("abdul"));
+console.log("isi", myStack.stackPush("karim"));
 console.log(myStack.arr[0]);
-console.log(myStack.maxSize);
+console.log("kosong", myStack.stackPop());
+console.log(myStack);
 
 // console.log(`The Stack is empty? ${stack.isEmpty()}`); // true jika kosong
 //
