@@ -19,27 +19,27 @@ class Queue {
     }
   }
 
-  queuePop() {
+  queueShift() {
     if(this.size() > 0){
-      return `${this.queue.pop()} Popped!`
+      return `${this.queue.shift()} Shifted!`
     }
     else{
-      console.log("queue kosong gak ada yang bisa di pop")
+      console.log("queue kosong gak ada yang bisa di shift")
     }
   }
 
-  last() {
+  first() {
     if(this.size() > 0){
-      console.log(`Last adalah: ${this.queue[0]}`)
+      console.log(`First adalah: ${this.queue[0]}`)
     }
     else {
       console.log ("queue kosong apa yang mau diliat?")
     }
   }
 
-  first() {
+  last() {
     if (this.size() > 0){
-     console.log(`First adalah:${this.queue[this.size()-1]}`)
+     console.log(`Last adalah:${this.queue[this.size()-1]}`)
     }
     else{
       console.log("queue kosong apa yang mau diliat?")
@@ -84,15 +84,13 @@ myQueue.queuePush(15)
 
 myQueue.queuePeep()
 
-myQueue.last()
-
-console.log(myQueue.queuePop())
-console.log(myQueue.queuePop())
-console.log(myQueue.queuePop())
-console.log(myQueue.queuePop())
+console.log(myQueue.queueShift())
+console.log(myQueue.queueShift())
+console.log(myQueue.queueShift())
+console.log(myQueue.queueShift())
 
 console.log(`The queue is empty? ${myQueue.isEmpty()}`)
 
-console.log(myQueue.queuePop())
+console.log(myQueue.queueShift())
 
 module.exports = Queue

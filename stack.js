@@ -30,18 +30,18 @@ class Stack {
     }
   }
 
-  first() {
+  last() {
     if(this.size() > 0){
-      return `first adalah: ${this.stack[0]}`
+      return `Last adalah: ${this.stack[0]}`
     }
     else {
       console.log ("stack kosong apa yang mau diliat?")
     }
   }
 
-  last() {
+  first() {
     if (this.size() > 0){
-     console.log(`last adalah:${this.stack[this.size()-1]}`)
+     console.log(`First adalah:${this.stack[this.size()-1]}`)
     }
     else{
       console.log("stack kosong apa yang mau diliat?")
@@ -85,7 +85,6 @@ console.log(myStack.size())
 myStack.stackPush(15)
 
 myStack.stackPeep()
-myStack.last()
 
 console.log(myStack.stackPop())
 console.log(myStack.stackPop())
