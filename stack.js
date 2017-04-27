@@ -12,8 +12,6 @@ class Stack {
   }
 
   stackPush(x) {
-    debugger
-    console.log (this.stack.length);
     if (this.stack.length>=this.max) {
       console.log ("Your stack is full. Sorry. Life is cruel.")
     }
