@@ -3,17 +3,17 @@
 // Your code implementation
 class Stack {
   constructor() {
-    this.str = [];
+    this.arr = [];
     this.max = 10;
   }
 
   size() {
-    return 'Saat ini Stack telah terisi sejumlah ' + (this.str).length + ' data.'
+    return 'Saat ini Stack telah terisi sejumlah ' + (this.arr).length + ' data.'
   }
 
   stackPush(x) {
-    if ((this.str).length < this.max) {
-      (this.str).push(x);
+    if ((this.arr).length < this.max) {
+      (this.arr).push(x);
       return 'Data ' + x + ' telah berhasil di tambahkan!'
     } else {
       return 'Maaf saat ini stack sudah mencapai kapasitas penuh,\nmohon hapus data-data yang tidak terpakai terlebih dahulu'
@@ -22,20 +22,20 @@ class Stack {
   }
 
   stackPop() {
-    (this.str).pop();
+    (this.arr).pop();
     return 'Data teratas telah berhasil di hapus!'
   }
 
   first() {
-    return `Data pertama adalah: ${(this.str)[0]}`
+    return `Data pertama adalah: ${(this.arr)[0]}`
   }
 
   last() {
-    return `Data terakhir adalah: ${(this.str)[((this.str).length)-1]}`
+    return `Data terakhir adalah: ${(this.arr)[((this.arr).length)-1]}`
   }
 
   isEmpty() {
-    if ((this.str).length > 0) {
+    if ((this.arr).length > 0) {
       return 'The Stack is not empty';
     } else {
       return 'The Stack is empty';
@@ -43,7 +43,7 @@ class Stack {
   }
 
   isFull() {
-    if ((this.str).length < this.max ) {
+    if ((this.arr).length < this.max ) {
       return 'Stack masih belum penuh!'
     } else {
       return 'Stack sudah penuh!'
@@ -52,10 +52,10 @@ class Stack {
   }
 
   stackPeep() {
-    return 'Data teratas adalah: ' + (this.str)[((this.str).length)-1]
+    return 'Data teratas adalah: ' + (this.arr)[((this.arr).length)-1]
   }
   pengakhir() {
-   return `Berikut seluruh isi data Stack saat ini: ` + `${(this.str).join(' ')}`
+   return `Berikut seluruh isi data Stack saat ini: ` + `${(this.arr).join(' ')}`
   }
 }
 
@@ -70,6 +70,7 @@ console.log(myStack.stackPush(15));
 console.log(myStack.pengakhir());
 console.log(myStack.first());
 console.log(myStack.last());
+console.log(myStack);
 
 
 module.exports = Stack
