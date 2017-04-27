@@ -1,7 +1,7 @@
 'use strict'
 
 class Queue {
-  constructor(max_size=15) {
+  constructor(max_size=3) {
     this.arr = [];
     this.maxSize = max_size;
   }
@@ -14,12 +14,12 @@ class Queue {
     if (this.isFull()) {
         return "array penuh";
     } else {
-      (this.arr).unshift(x);
+      (this.arr).push(x);
     }
   }
 
   queuePop() {
-    if (this.isEmpty()) {
+    if (!this.isEmpty()) {
       (this.arr).shift();
     } else {
       return "Array kosong";
@@ -35,7 +35,7 @@ class Queue {
   }
 
   isEmpty() {
-    if (!this.isFull()) {
+    if (this.arr == []) {
       return true;
     } else {
       return false;
@@ -43,14 +43,25 @@ class Queue {
   }
 
   isFull() {
-    if (this.arr.length > this.maxSize) {
+    if (this.arr.length == this.maxSize) {
       return true;
     } else {
       return false;
     }
   }
 
-  stackPeep() {
+  queuePeep() {
     return this.arr[0];
   }
 }
+
+let queueStack = new Queue();
+queueStack.queueInsert("fajar");
+queueStack.queueInsert(123123);
+// queueStack.queueInsert(123123);
+// console.log(queueStack.queuePop());
+queueStack.queuePop();
+
+console.log("apa penuh ? ", queueStack.isFull());
+console.log(queueStack);
+console.log(queueStack.size());
