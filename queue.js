@@ -1,7 +1,7 @@
 'use strict'
 
 class Queue {
-  constructor(max_size=3) {
+  constructor(max_size=10) {
     this.arr = [];
     this.maxSize = max_size;
   }
