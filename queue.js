@@ -48,7 +48,7 @@ class Queue {
   }
   //penuh lsg tolak
   isFull() {
-    return (this.size() > this.MAX_SIZE);
+    return (this.size() >= this.MAX_SIZE);
   }
 
 }

@@ -17,8 +17,8 @@ class Stack {
   }
   //add data
   stackPush(x) {
-   if (!this.isFull()) this.data.unshift(x);
-   else console.log(`Tidak dapat menambahkan data '${x}'karena penuh`);
+   if (this.isFull()) console.log(`Tidak dapat menambahkan data '${x}'karena penuh`);
+   else this.data.unshift(x);
 
   }
   //hapus data terakhir
@@ -48,10 +48,11 @@ class Stack {
   }
   //penuh lsg tolak
   isFull() {
-    return (this.size() > this.MAX_SIZE);
+    return (this.size() >= this.MAX_SIZE);
   }
 
 }
+
 
 let myStack = new Stack(4);
 console.log(`The stack is empty?  ${myStack.isEmpty()}`);//true
@@ -62,6 +63,7 @@ myStack.stackPush('cool');
 myStack.stackPush('loh');
 //karena bukan arr jadi bisa masukan tipe data apapun
 myStack.stackPush(15);
+
 //paling atas
 myStack.stackPeek();//15
 
