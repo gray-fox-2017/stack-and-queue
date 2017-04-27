@@ -33,11 +33,19 @@ class Stack {
   }
 
   first() {
-    console.log(this.arrStack[0])
+    if(this.isEmpty() == true){
+      return []
+    } else {
+      return this.arrStack[0];
+    }
   }
 
   last() {
-    console.log(this.arrStack[this.arrStack.length - 1]);
+    if(this.isFull() == true){
+      return 'array is full, the current array are : '+this.arrStack.length
+    } else {
+      return this.arrStack[5];
+    }
   }
 
   isEmpty() {
@@ -57,12 +65,14 @@ class Stack {
 let stack = new Stack();
 console.log(`The Stack is empty? ${stack.isEmpty()}`)
 stack.size();
+console.log(stack.first())
 stack.stackPush('JavaScript')
 stack.stackPush('is just so')
 stack.stackPush('cool')
 stack.stackPush(15)
 stack.stackPush('Hacktiv8')
 stack.stackPush('keluar')
+console.log(stack.last())
 stack.stackPeep()
 stack.stackPop()
 stack.stackPop()

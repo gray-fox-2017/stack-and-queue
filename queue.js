@@ -32,11 +32,19 @@ class Queue {
   }
 
   first() {
-    console.log(this.arra[0])
+    if(this.isEmpty() == true){
+      return []
+    } else {
+      return this.arra[0];
+    }
   }
 
   last() {
-    console.log(this.arra[this.arra.length - 1]);
+    if(this.isFull() == true){
+      return 'array full and the current array are : '+this.arra.length
+    } else {
+      return this.arra[5];
+    }
   }
 
   isEmpty() {
@@ -56,12 +64,14 @@ class Queue {
 let que = new Queue();
 console.log(`The que is empty? ${que.isEmpty()}`)
 que.size();
+console.log(que.first())
 que.quePush('JavaScript')
 que.quePush('is just so')
 que.quePush('cool')
 que.quePush(15)
 que.quePush('Hacktiv8')
 que.quePush('keluar')
+console.log(que.last())
 que.quePeep()
 que.queRemove()
 que.queRemove()
