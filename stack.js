@@ -21,15 +21,17 @@ class Stack {
   }
 
   stackPop() {
-    return this.array.pop();
+    if(this.isEmpty()) {
+      console.log('Sudah Kosong')
+    } else return this.array.pop();
   }
 
   first() {
-    return this.array[ 0 ];
+    return this.array[0];
   }
 
   last() {
-    return this.array[ this.size() - 1 ]
+    return this.array[this.size() - 1]
   }
 
   isEmpty() {
@@ -65,16 +67,15 @@ myStack.stackPush('JavaScript');
 myStack.stackPush('is just so');
 myStack.stackPush('cool');
 
-// myStack.stackPeep();
+myStack.stackPeep();
 //
-// myStack.stackPop();
-// myStack.stackPop();
-// myStack.stackPop();
-// myStack.stackPop();
-//
-// console.log(`The stack is empty? ${myStack.isEmpty()}`)
-//
-// console.log(myStack.stackPop());
+myStack.stackPop();
+myStack.stackPop();
+myStack.stackPop();
+myStack.stackPop();
+
+console.log(`The stack is empty? ${myStack.isEmpty()}`)
+myStack.stackPop()
 
 
 

@@ -14,21 +14,23 @@ class Queue {
     if(this.size() < this.MAX_SIZE) {
       return this.array.push(x);
     } else {
-      console.log('Stack Penuh');
+      console.log('Queue Penuh');
       return this.array;
     }
   }
 
   queueRemove() {
-    return this.array.shift();
+    if(this.isEmpty()) {
+      console.log('Sudah Kosong')
+    } else return this.array.shift();
   }
 
   first() {
-    return this.array[ 0 ];
+    return this.array[0];
   }
 
   last() {
-    return this.array[ this.size() - 1 ]
+    return this.array[this.size() - 1]
   }
 
   isEmpty() {
