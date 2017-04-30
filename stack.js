@@ -13,7 +13,7 @@ class Stack {
 
   stackPush(x) {
     if (this.isFull()) {
-      return "array penuh";
+      return false;
     } else {
       (this.arr).push(x);
     }
@@ -21,7 +21,7 @@ class Stack {
 
   stackPop() {
     if (this.isEmpty()) {
-      return "array kosong";
+      return false;
     } else {
       (this.arr).pop();
     }
@@ -29,15 +29,15 @@ class Stack {
   }
 
   first() {
-    return this.arr[0];
-  }
-
-  last() {
     return this.arr[this.arr.length - 1];
   }
 
+  last() {
+    return this.arr[0];
+  }
+
   isEmpty() {
-    if (this.arr == []) {
+    if (this.arr[0] == undefined) {
       return true;
     } else {
       return false;
@@ -53,34 +53,24 @@ class Stack {
   }
 
   stackPeep() {
-    return this.arr[0];
+    return this.arr;
   }
 }
 
 // module.exports = Stack
 //
 let myStack = new Stack();
-myStack.stackPush("x");
-myStack.stackPush("cc");
-console.log(myStack);
 
-console.log(myStack.stackPeep());
-console.log("is it empty ? ", myStack.isEmpty());
-console.log("is it full ?", myStack.isFull());
-console.log("isi ", myStack.stackPush("fajar"));
-console.log("isi", myStack.stackPush("abdul"));
-console.log("isi", myStack.stackPush("karim"));
-console.log(myStack.arr[0]);
-console.log("kosong", myStack.stackPop());
-console.log(myStack);
+console.log(`The Stack is empty? ${myStack.isEmpty()}`); // true jika kosong
 
-// console.log(`The Stack is empty? ${stack.isEmpty()}`); // true jika kosong
-//
-// myStack.stackPush("Javascript");
-// myStack.stackPush("is just so");
-//
-// myStack.stackPush(15);
-// myStack.stackPeep();
-//
-// console.log(`The stack is empty? ${myStack.isEmpty()}`);
-// console.log(myStack.stackPop());
+myStack.stackPush("Javascript");
+myStack.stackPush("is just so");
+
+myStack.stackPush(15);
+console.log("Inside my stack ", myStack.stackPeep());
+console.log("The first out is ",myStack.first());
+console.log("The last out is ",myStack.last());
+
+console.log(`The stack is empty? ${myStack.isEmpty()}`);
+myStack.stackPop()
+console.log("Inside my stack ",myStack.stackPeep());
