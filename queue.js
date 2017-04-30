@@ -1,7 +1,7 @@
 'use strict'
 
 class Queue {
-  constructor(max_size=10) {
+  constructor(max_size) {
     this.arr = [];
     this.maxSize = max_size;
   }
@@ -12,7 +12,7 @@ class Queue {
 
   queueInsert(x) {
     if (this.isFull()) {
-        return "array penuh";
+        return false;
     } else {
       (this.arr).push(x);
     }
@@ -22,7 +22,7 @@ class Queue {
     if (!this.isEmpty()) {
       (this.arr).shift();
     } else {
-      return "Array kosong";
+      return false;
     }
   }
 
@@ -35,7 +35,7 @@ class Queue {
   }
 
   isEmpty() {
-    if (this.arr == []) {
+    if (this.arr[0] == undefined) {
       return true;
     } else {
       return false;
@@ -51,17 +51,27 @@ class Queue {
   }
 
   queuePeep() {
-    return this.arr[0];
+    return this.arr;
   }
 }
 
-let queueStack = new Queue();
-queueStack.queueInsert("fajar");
-queueStack.queueInsert(123123);
-// queueStack.queueInsert(123123);
-// console.log(queueStack.queuePop());
-queueStack.queuePop();
 
-console.log("apa penuh ? ", queueStack.isFull());
-console.log(queueStack);
-console.log(queueStack.size());
+let myQueue = new Queue(4);
+
+myQueue.queueInsert('J');
+myQueue.queueInsert('A');
+myQueue.queueInsert('K');
+
+console.log(myQueue.arr)
+
+myQueue.queueInsert('A');
+
+console.log(myQueue.first());
+
+console.log(myQueue.isEmpty());
+console.log(myQueue.size());
+myQueue.queueInsert('R');
+console.log(myQueue.isFull());
+console.log(myQueue.queuePeep());
+myQueue.queuePop();
+console.log(myQueue.queuePeep());
