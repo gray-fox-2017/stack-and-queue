@@ -2,7 +2,7 @@
 
 // Your code implementation
 class Stack {
-  constructor(maxSize=15) {
+  constructor(maxSize=2) {
     this.arr = []
     this.maxSize = maxSize
   }
@@ -12,11 +12,12 @@ class Stack {
   }
 
   stackPush(x) {
-    if (this.arr.length<=this.maxSize){
+    if (this.arr.length<this.maxSize){
       this.arr.push(x);
       return this.arr
+    } else {
+      return 'Data sudah penuh'
     }
-    return 'Data sudah penuh'
   }
 
   stackPop() {
@@ -41,7 +42,7 @@ class Stack {
   }
 
   isFull() {
-    if(this.arr.length == maxSize){
+    if(this.arr.length == this.maxSize){
       return true
     } else {
       return false
@@ -57,25 +58,27 @@ let myStack = new Stack();
 
 console.log(`The stack is empty? ${myStack.isEmpty()}`)
 
-myStack.stackPush('JavaScript')
-myStack.stackPush('is just so')
-myStack.stackPush('cool')
+console.log(myStack.stackPush('JavaScript'))
+console.log(myStack.stackPush('is just so'))
+console.log(myStack.stackPush('cool'))
 
-myStack.stackPush(15)
-myStack.stackPush(30)
+console.log(myStack.stackPush(15))
+console.log(myStack.stackPush(30))
 console.log(myStack.arr)
+console.log(myStack.isFull())
+console.log(`The stack is empty? ${myStack.isEmpty()}`)
 
 myStack.stackPeek()
 
-console.log(myStack.first())
-console.log(myStack.stackPop())
-console.log(myStack.stackPop())
-console.log(myStack.stackPop())
-console.log(myStack.size())
-console.log(myStack.last())
-
-console.log(`The stack is empty? ${myStack.isEmpty()}`)
-
-console.log(myStack.stackPop())
+// console.log(myStack.first())
+ console.log(myStack.stackPop())
+// console.log(myStack.stackPop())
+// console.log(myStack.stackPop())
+// console.log(myStack.size())
+// console.log(myStack.last())
+//
+// console.log(`The stack is empty? ${myStack.isEmpty()}`)
+//
+// console.log(myStack.stackPop())
 
 module.exports = Stack
