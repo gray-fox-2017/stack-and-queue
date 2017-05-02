@@ -6,8 +6,8 @@ class Queue {
     this.MAX_SIZE = maxSize
   }
 
-  queueInsert() {
-    return this.data.push(4)
+  queueInsert(isi) {
+    return this.data.push(isi)
   }
 
   queueRemove() {
@@ -22,7 +22,7 @@ class Queue {
   }
 
   queueLast() {
-    return this.data[this.data.length -1]
+    return this.data[this.data.length]
   }
 
   isEmpty() {
@@ -37,4 +37,11 @@ class Queue {
     return this.first()
   }
 
+
+
 }
+let q = new Queue()
+console.log(q.queueInsert("javaScript"));
+console.log(q.queueRemove());
+console.log(q.isFull());
+console.log(q.isEmpty());
