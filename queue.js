@@ -14,7 +14,7 @@ class Queue {
       console.log(`${x} pushed!`)
       this.queue.push(x)
     }
-    if (this.queue >= this.max) {
+    else {
       console.log("Sorry uda full coy")
     }
   }
@@ -69,7 +69,7 @@ class Queue {
   }
 }
 
-let myQueue = new Queue(15)
+let myQueue = new Queue(2)
 console.log(`The queue is empty? ${myQueue.isEmpty()}`)
 
 console.log(myQueue.size())
