@@ -16,7 +16,7 @@ class Stack {
       console.log(`${x} pushed!`)
       this.stack.push(x)
     }
-    if (this.stack >= this.max) {
+    else {
       console.log("Sorry uda full coy")
     }
   }
@@ -30,18 +30,18 @@ class Stack {
     }
   }
 
-  last() {
+  first() {
     if(this.size() > 0){
-      return `Last adalah: ${this.stack[0]}`
+      return `First adalah: ${this.stack[0]}`
     }
     else {
       console.log ("stack kosong apa yang mau diliat?")
     }
   }
 
-  first() {
+  last() {
     if (this.size() > 0){
-     console.log(`First adalah:${this.stack[this.size()-1]}`)
+     console.log(`Last adalah:${this.stack[this.size()-1]}`)
     }
     else{
       console.log("stack kosong apa yang mau diliat?")
@@ -67,11 +67,11 @@ class Stack {
   }
 
   stackPeep() {
-    console.log(this.first())
+    console.log(this.last())
   }
 }
 
-let myStack = new Stack(15)
+let myStack = new Stack(2)
 console.log(`The stack is empty? ${myStack.isEmpty()}`)
 
 console.log(myStack.size())
@@ -85,6 +85,7 @@ console.log(myStack.size())
 myStack.stackPush(15)
 
 myStack.stackPeep()
+
 
 console.log(myStack.stackPop())
 console.log(myStack.stackPop())
