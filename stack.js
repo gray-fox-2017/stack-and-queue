@@ -28,15 +28,17 @@ class Stack {
   }
 
   isEmpty() {
-    if(this.name.length == 0){
-      return true;
-    }else{return false}
+    return this.name.length == 0;
+    // if(this.name.length == 0){
+    //   return true;
+    // }else{return false}
   }
 
   isFull() {
-    if(this.name.length == this.MAX_SIZE){
-      return true;
-    }else{return false}
+    return this.name.length == this.MAX_SIZE;
+    // if(this.name.length == this.MAX_SIZE){
+    //   return true;
+    // }else{return false}
   }
 
   stackPeep() {
